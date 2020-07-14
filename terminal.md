@@ -30,6 +30,6 @@
 
 `firebase login` to login
 
-`firebase init` to initialize (set your "public" directory to "build" in the questions)
+`firebase init` to initialize (set your "public" directory to "build" in the questions). Also make sure to NOT overwrite your index.html
 
 `firebase deploy` to deploy your app!
