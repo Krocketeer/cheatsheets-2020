@@ -79,3 +79,37 @@ function Person(props){
   return <div>{props.age}</div>
 }
 ```
+
+
+
+### example app
+```js
+import React, {useState, useEffect} from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Counter label="Add One" n={1} initial={5} />
+      <Counter label="Minus Two" n={-2} />
+      <Counter label="Add 100" n={100} />
+    </div>
+  )
+}
+
+function Counter(props){
+  const {label, n, initial} = props
+  const [count, setCount] = useState(initial||0)
+  return <div style={{marginTop:25}}>
+    <button onClick={()=> setCount(count+n)}>
+      {label}
+    </button>
+    <div>
+      {count}
+    </div>
+  </div>
+}
+
+export default App;
+
+```
