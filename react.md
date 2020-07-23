@@ -87,12 +87,22 @@ function Person(props){
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
+const counterz=[{
+  label:'Add One', n:1, initial:5
+},{
+  label:'Minus Two', n:-2
+},{
+  label:'Add 100', n:100
+}]
+
 function App() {
   return (
     <div className="App">
-      <Counter label="Add One" n={1} initial={5} />
-      <Counter label="Minus Two" n={-2} />
-      <Counter label="Add 100" n={100} />
+      {counterz.map((c,i)=>{
+        return <Counter key={i} // React needs a "key"
+          label={c.label} n={c.n} initial={c.initial}
+        />
+      })}
     </div>
   )
 }
