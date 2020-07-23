@@ -81,6 +81,7 @@ img {
     flex-direction:column; /* or row */
     align-items:center; /* or flex-start, flex-end, space-between, space-around, space-evenly */
     justify-content:center;
+    flex-wrap:wrap; /* allows your children to wrap */
 }
 .child{
     flex:1; /* the ratio of how much space to take up */
@@ -88,3 +89,21 @@ img {
 ```
 - `align-items` aligns opposite the direction axis
 - `justify-content`: aligns items on the direction axis
+
+### response CSS
+```css
+html { /* MOBILE */
+  font-size: 15px;
+}
+@media (min-width: 400px) {
+  html { /* TABLET */
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  html { /* DESKTOP */
+    font-size: 21px;
+  }
+}
+```
+- you can use `rem` units to scale other elements on your page in relation to that `font-size` on your `<html>` element. 
