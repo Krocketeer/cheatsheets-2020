@@ -53,8 +53,10 @@ img {
 .class{
     color: blue; /* for text color */
     background: red; /* background color */
-    width: 10px;
+    width: 5rem;
+    max-width: 100vw;
     height: 10%;
+    max-height: 100vh;
     margin: 20px; /* outside the element */
     padding: 20px; /* inside */
     font-size: 10px;
@@ -107,3 +109,31 @@ html { /* MOBILE */
 }
 ```
 - you can use `rem` units to scale other elements on your page in relation to that `font-size` on your `<html>` element. 
+
+
+### animations
+```css
+.my-button{
+  transition:all 0.2s; /* a "transition" on your animation */
+}
+.my-button:hover{
+  transform:scale(1.2,1.2) translate(100px, 50px);
+}
+```
+
+Using "transform" or "opacity" for animations makes your application WAY more performant and will not slow down the page, even with thousands of animations running.
+
+**long-running animations**
+```css
+.logo{
+  animation: spinny infinite 20s linear;
+}
+@keyframes spinny {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```

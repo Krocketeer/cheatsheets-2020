@@ -81,6 +81,20 @@ function Person(props){
 ```
 
 
+### useRef
+```js
+// auto focus an input!
+function App(){
+  const divRef = useRef()
+  useEffect(()=>{
+    divRef.current.focus()
+  }, [])
+  return <input ref={divRef}
+    placeholder="hello world"
+  />
+}
+```
+
 
 ### example app
 ```js
@@ -122,4 +136,31 @@ function Counter(props){
 
 export default App;
 
+```
+
+
+
+### animations with React
+```js
+function TextInput({show}){
+  const [width] = useState(Math.random()*300)
+  const inputRef = useRef()
+  useEffect(()=>{
+    if(show) {
+      setTimeout(()=> inputRef.current.focus(), 250)
+    }
+    else inputRef.current.blur()
+  }, [show])
+  return <input ref={inputRef} 
+    placeholder="hello world"
+    style={{
+      width: width,
+      transition: 'all 0.2s',
+      transform: show ? 
+        'translate(0,0) rotate(0)' : 
+        'translate(400px,0) rotate(180deg)',
+      opacity: show ? 1 : 0,
+    }}
+  />
+}
 ```

@@ -17,3 +17,7 @@
 ### note
 
 The `.gitignore` file lets you add specific files and folders that you dont want saved on github. Always add the `/node_modules` folder!!!
+
+### copy a repo
+
+`git clone {url.git}`: copy an entire repository to your local computer. Then you can `cd` into it, and run `npm install` to install all the dependencies.
