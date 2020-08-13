@@ -76,8 +76,14 @@ if(3===2) {
 if(3=='3') { // == only compares value
     console.log('YES!!')
 }
-if(3==='3') { // === compares value AND type
+if(3!=='3') { // === compares value AND type
+    console.log('YES!!!')
+}
+if(true && false) { // and 
     console.log('nope')
+}
+if(true || false) { // or
+    console.log('YESS!!!')
 }
 
 // "ternary expression" one-line if statement
@@ -88,4 +94,22 @@ var n = 2==='2' ? 10 : 'hello' // prints "hello"
 <div style={{
     color: darkMode ? 'white' : 'black'
 }} />
+
+// or for dynamically rendering components
+function Header(){
+    const [settings, setSettings] = useState(false)
+    return <div>
+        { settingsToggled ? 
+            <SettingsMenu /> :
+            <ToggleButton />
+        }
+    </div>
+}
+
+// && is used a lot in React. In this example, SettingsMenu will only render if "settings" is true. (! means "not")
+const [settings, setSettings] = useState(true)
+return <div>
+    {settings && <SettingsMenu />}
+    {!settings && <ToggleButton />}
+</div>
 ```
